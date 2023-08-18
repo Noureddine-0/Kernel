@@ -40,7 +40,7 @@ To work with this kernel module, you'll need:
    ```bash
    cd procfs1
 
-3. Build the kernel module :
+3. Build the kernel module (please change the spaces in the Makefile before make -C with one tab):
 
    ```bash
    make
