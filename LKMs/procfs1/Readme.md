@@ -33,7 +33,7 @@ To work with this kernel module, you'll need:
 1. Clone this repository to your local machine :
 
    ```bash
-   git clone https://github.com/your-username/procfs1.git
+   git clone https://github.com/your-username/LKMs.git
 
 2. Navigate to the project directory :
 
