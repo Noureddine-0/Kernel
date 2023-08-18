@@ -23,11 +23,15 @@ static struct proc_dir_entry *our_proc_file;
 // Function prototypes for read and write operations
 static ssize_t procfile_read(struct file *, char __user *, size_t, loff_t *);
 static ssize_t procfile_write(struct file *, const char __user *, size_t, loff_t *);
+static int procfile_open(struct inode * , struct file *);
+static int procfile_close(struct inode *, struct file *);
 
 // Structure for procfs operations
 static const struct proc_ops fops = {
     .proc_read = procfile_read,
     .proc_write = procfile_write,
+    .proc_open = procfile_open,
+    .proc_release = procfile_close,
 };
 
 // Pointer to the buffer for data storage
@@ -58,6 +62,17 @@ static int __init initialize(void) {
     return SUCCESS;
 }
 
+//Open operation for the proc file 
+static int procfile_open(struct inode *inode , struct file *file){
+    try_module_get(THIS_MODULE);
+    return 0;
+}
+
+//Release operation for the proc file
+static int procfile_close(struct inode *inode , struct file *file){
+    module_put(THIS_MODULE);
+    return 0;
+}
 // Read operation for the proc file
 static ssize_t procfile_read(struct file *file, char __user *buf, size_t size, loff_t *offset) {
     // Calculate the available data length to copy
@@ -82,13 +97,11 @@ static ssize_t procfile_write(struct file *file, const char __user *buf, size_t 
     buffer = new_buffer;
     allocated = size;
 
-    pr_info("Trying to write at offset %d\n", (int)*offset);
-
     // Copy data from user buffer to kernel buffer
     if (copy_from_user(buffer, buf, size))
         return 0;
 
-    // Configure offset later , just take it simple for now 
+    // Configure offset later , just take it easy for now 
     *offset = 0;
     return size;
 }
