@@ -1,6 +1,6 @@
 # Linux Kernel Modules Repository
 
-This repository is a collection of Linux Kernel Modules (LKMs) developed by [Your Name]. LKMs are pieces of code that can be dynamically loaded and unloaded into the Linux kernel. They extend the functionality of the kernel, allowing you to add features, modify behavior, or interact with the kernel in various ways.
+This repository is a collection of Linux Kernel Modules (LKMs) . LKMs are pieces of code that can be dynamically loaded and unloaded into the Linux kernel. They extend the functionality of the kernel, allowing you to add features, modify behavior, or interact with the kernel in various ways.
 
 ## Overview
 
@@ -28,4 +28,4 @@ This repository is licensed under the GNU General Public License (GPL), ensuring
 
 ## Author
 
-[Your Name](https://github.com/Noureddine-0) is the creator and maintainer of this repository. Feel free to reach out for questions, assistance, or discussions related to the Linux Kernel Modules hosted here.
+[Noureddine-0](https://github.com/Noureddine-0) is the creator and maintainer of this repository. Feel free to reach out for questions, assistance, or discussions related to the Linux Kernel Modules hosted here.
