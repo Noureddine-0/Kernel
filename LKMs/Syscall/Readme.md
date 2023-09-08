@@ -11,7 +11,7 @@ The primary goal of this LKM is to enhance system monitoring and security by log
 - Intercepts the `openat` system call in the Linux kernel.
 - Logs file open operations, including the file paths.
 - Allows filtering file opens by User ID.
-- Compatible with Linux kernel versions 5.3.0 and above.
+- Compatible with Linux kernel versions 6.4.0 and above.
 
 ## Module Parameters
 
@@ -25,4 +25,4 @@ This LKM can be configured with the following module parameters:
 1. Load the module using `insmod`:
 
    ```bash
-   sudo insmod your_module.ko uid=1000 address=0xXXXXXXXX
+   sudo insmod nsyscall.ko uid=1000 address=0xXXXXXXXX
